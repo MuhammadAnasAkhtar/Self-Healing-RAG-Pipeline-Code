@@ -1,6 +1,4 @@
-Here’s the updated **complete README.md** with your full name and title.
 
-```markdown
 # Self-Healing RAG Pipeline 🔧
 
 A production‑grade **Retrieval‑Augmented Generation (RAG)** pipeline that automatically detects retrieval failures and **self‑heals** by adjusting chunking, embeddings, or retrieval strategy – no human intervention required.
