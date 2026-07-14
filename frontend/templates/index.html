@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Healing RAG Pipeline</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+    <!-- ===== INTRO OVERLAY ===== -->
+    <div id="intro-overlay">
+        <div class="intro-content">
+            <div class="intro-border">
+                <span class="border-line border-top-left"></span>
+                <span class="border-line border-top-right"></span>
+                <span class="border-line border-bottom-left"></span>
+                <span class="border-line border-bottom-right"></span>
+            </div>
+            <h1 class="intro-title">SELF-HEALING RAG</h1>
+            <p class="intro-credit">Created & Maintained by</p>
+            <p class="intro-author">Muhammad Anas</p>
+            <p class="intro-tagline">"Building AI that learns, adapts, and improves."</p>
+            <div class="intro-loader"></div>
+            <p class="intro-skip-hint">Click anywhere to skip</p>
+        </div>
+        <div class="particles" id="particles"></div>
+    </div>
+
+    <!-- ===== MAIN APP ===== -->
+    <div class="container" id="main-app" style="display:none;">
+        <header>
+            <h1>🧠 Self-Healing RAG Pipeline</h1>
+            <p class="subtitle">Automatic retrieval evaluation & adaptive healing</p>
+        </header>
+
+        <div class="dashboard">
+            <div class="card upload-section">
+                <h2>📄 Upload Document</h2>
+                <div class="upload-area" id="uploadArea">
+                    <input type="file" id="fileInput" accept=".txt,.pdf" hidden>
+                    <span>Drop PDF/TXT here or click to browse</span>
+                </div>
+                <div id="uploadStatus"></div>
+                <button id="resetBtn" class="reset-btn">🗑️ Reset Knowledge Base</button>
+            </div>
+
+            <div class="card query-section">
+                <h2>❓ Ask a Question</h2>
+                <div class="query-form">
+                    <input type="text" id="queryInput" placeholder="Type your question...">
+                    <button id="queryBtn">🔍 Ask</button>
+                </div>
+                <div id="responseArea" class="response-area hidden">
+                    <h3>Answer</h3>
+                    <div id="answerText" class="answer-box"></div>
+                    <div class="relevance-bar">
+                        <span>Average Relevance: </span>
+                        <span id="avgRelevance">0.00</span>
+                        <div class="progress-bg"><div id="relevanceProgress" class="progress-fill"></div></div>
+                    </div>
+                    <div id="chunksArea"></div>
+                </div>
+            </div>
+
+            <div class="card metrics-section">
+                <h2>📈 Retrieval Metrics</h2>
+                <canvas id="metricsChart"></canvas>
+            </div>
+
+            <div class="card healing-log">
+                <h2>🩺 Healing Log</h2>
+                <div id="healingActions" class="log-box">
+                    <p>No healing actions yet.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
